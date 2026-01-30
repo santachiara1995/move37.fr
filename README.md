@@ -93,5 +93,5 @@ Now, merges to `main` trigger an immediate deploy.
 
 ## CI/CD
 
-GitHub Actions builds Docker images and pushes to GHCR on `main`.
+GitHub Actions builds Docker images and pushes to GHCR on `master`.
 Update the `VITE_API_URL` build arg in `.github/workflows/ci.yml` for your deploy URL.
