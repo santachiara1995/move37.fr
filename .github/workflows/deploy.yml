@@ -22,6 +22,8 @@ jobs:
           mkdir -p ~/.ssh
           printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
+          head -n 1 ~/.ssh/id_ed25519 | grep -q "BEGIN OPENSSH PRIVATE KEY" || (echo "SSH_PRIVATE_KEY is not a private key" && exit 1)
+          ssh-keygen -l -f ~/.ssh/id_ed25519 >/dev/null
           ssh-keyscan 100.121.244.99 >> ~/.ssh/known_hosts
 
       - name: Deploy on VPS
