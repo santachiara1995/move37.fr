@@ -105,7 +105,7 @@ onMounted(loadNotes)
           </button>
         </div>
         <div v-if="notes.length === 0" class="empty">
-          <p>No notes yet. Add one to verify SQLite persistence.</p>
+          <p>No notes yet. Add one to verify SQLite haha GOAT.</p>
         </div>
         <ul v-else class="notes">
           <li v-for="note in notes" :key="note.id">
