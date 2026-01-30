@@ -1,0 +1,26 @@
+services:
+  api:
+    image: ghcr.io/santachiara1995/template-vps/api:latest
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      DB_PATH: /data/app.db
+    volumes:
+      - ./data:/data
+
+  web:
+    image: ghcr.io/santachiara1995/template-vps/web:latest
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+
+  adminer:
+    image: adminer:4.8.1
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./data:/data
+    depends_on:
+      - api

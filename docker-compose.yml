@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  api:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      DB_PATH: /data/app.db
+    volumes:
+      - ./data:/data
+
+  web:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: https://move37.online
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+
+  adminer:
+    image: adminer:4.8.1
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./data:/data
+    depends_on:
+      - api
