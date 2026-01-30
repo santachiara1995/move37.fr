@@ -17,19 +17,16 @@ jobs:
           authkey: ${{ secrets.TAILSCALE_AUTH_KEY }}
           args: --ssh=false
 
-      - name: Load SSH key
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Trust VPS host key
+      - name: Set up SSH key
         run: |
           mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan 100.121.244.99 >> ~/.ssh/known_hosts
 
       - name: Deploy on VPS
         run: |
-          ssh didi@100.121.244.99 << 'EOF'
+          ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes didi@100.121.244.99 << 'EOF'
             set -e
             cd /home/didi/Desktop/template-vps
             git pull origin master
