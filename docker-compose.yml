@@ -4,7 +4,7 @@ services:
   api:
     build: ./backend
     ports:
-      - "3000:3000"
+      - "3107:3000"
     environment:
       PORT: 3000
       DB_PATH: /data/app.db
@@ -15,16 +15,16 @@ services:
     build:
       context: ./frontend
       args:
-        VITE_API_URL: https://move37.online
+        VITE_API_URL: https://move37.fr
     ports:
-      - "8080:80"
+      - "8107:80"
     depends_on:
       - api
 
   adminer:
     image: adminer:4.8.1
     ports:
-      - "8081:8080"
+      - "9107:8080"
     volumes:
       - ./data:/data
     depends_on:
