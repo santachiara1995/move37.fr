@@ -82,6 +82,12 @@ a {
   color: var(--muted);
 }
 
+.nav-links .router-link-active,
+.nav-links .router-link-exact-active {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 .nav-actions {
   display: flex;
   gap: 12px;
@@ -123,6 +129,22 @@ a {
 
 .hero {
   padding: 80px 24px 56px;
+}
+
+.page-hero {
+  padding: 72px 24px 40px;
+}
+
+.page-hero-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.page-hero-inner h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(30px, 5vw, 48px);
+  margin-bottom: 12px;
 }
 
 .hero-inner {
@@ -259,6 +281,68 @@ a {
   font-size: 16px;
 }
 
+.steps-grid,
+.service-grid,
+.team-grid {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.step-card {
+  background: var(--card);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.step-number {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.split {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.split > div {
+  flex: 1 1 320px;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.grid-3 {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
 .feature-grid,
 .course-grid,
 .testimonial-grid {
@@ -278,6 +362,20 @@ a {
   border: 1px solid var(--border);
   padding: 20px;
   box-shadow: var(--shadow);
+}
+
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  margin-bottom: 8px;
 }
 
 .feature-card h3,
@@ -348,6 +446,110 @@ figcaption {
 
 figcaption strong {
   color: var(--ink);
+}
+
+.list {
+  list-style: disc;
+  padding-left: 20px;
+  color: var(--muted);
+  display: grid;
+  gap: 10px;
+}
+
+.tag-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.tag-chip {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.team-role {
+  color: var(--secondary);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.contact-grid {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.form {
+  display: grid;
+  gap: 16px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.form-success {
+  color: #1f7a5b;
+  font-weight: 600;
+}
+
+.login-card {
+  max-width: 520px;
+  margin: 0 auto;
+  background: var(--card);
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.password-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.password-row .btn {
+  white-space: nowrap;
+}
+
+.login-note {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.login-note a {
+  color: var(--accent);
+  font-weight: 600;
+  margin-left: 6px;
 }
 
 .cta {
