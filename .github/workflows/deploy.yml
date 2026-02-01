@@ -30,7 +30,7 @@ jobs:
         run: |
           ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes didi@100.121.244.99 << 'EOF'
             set -e
-            cd /home/didi/Desktop/template-vps
+            cd /home/didi/Desktop/move37.fr
             git pull origin master
             docker compose pull || true
             docker compose up -d --build
